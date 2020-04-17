@@ -1,0 +1,12 @@
+---
+packages_common:
+  - sudo
+  - rsync
+  - lsof
+
+packages_ubuntu:
+  - "{{ packages_common }}"
+
+packages_redhat:
+  - "{{ packages_common }}"
+  - libselinux-python

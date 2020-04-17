@@ -1,0 +1,18 @@
+---
+# tasks file for package_install
+- name: package
+  block:
+    - name: package rsync
+      package:
+        update_cache: yes
+        name: "{{ item }}"
+      loop: "{{ packages_ubuntu }}"
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: package libselinux-python
+      package:
+        update_cache: yes
+        name: "{{ item }}"
+      loop: "{{ packages_redhat }}"
+      when: ansible_os_family == 'RedHat'
+  when: ansible_distribution != 'MacOSX'
