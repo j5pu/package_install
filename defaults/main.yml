@@ -3,6 +3,7 @@ packages_common:
   - sudo
   - rsync
   - lsof
+  - sysstat
 
 packages_ubuntu:
   - "{{ packages_common }}"
