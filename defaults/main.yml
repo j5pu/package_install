@@ -7,7 +7,9 @@ packages_common:
 
 packages_ubuntu:
   - "{{ packages_common }}"
+  - build-essential
 
 packages_redhat:
   - "{{ packages_common }}"
   - libselinux-python
+  - '@Development Tools'
